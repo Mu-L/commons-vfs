@@ -45,7 +45,7 @@ The <action> type attribute can be add,update,fix,remove.
     <author email="dev@commons.apache.org">Apache Commons Developers</author>
   </properties>
   <body>
-    <release version="2.10.0" date="2024-12-19" description="Maintenance release. Requires Java 8 or above.">
+    <release version="2.10.0" date="2025-02-01" description="Maintenance release. Requires Java 8 or above.">
       <!-- FIX -->
       <action type="fix" issue="VFS-854" dev="ecki" due-to="Andrey Turbanov">
         Avoid debug-logging URL credentials.
@@ -209,6 +209,8 @@ The <action> type attribute can be add,update,fix,remove.
       <action type="fix" dev="ggregory" due-to="Gary Gregory">Pick up exec-maven-plugin version from parent POM.</action>
       <action type="fix" dev="ggregory" due-to="Anthony Goubard">Fixed commons-vfs2-sandbox module not compiling due to missing imports and library #634.</action>
       <action type="fix" dev="ggregory" due-to="Marek Sunda, Gary Gregory, Arnout Engelen">FtpFileObject.getChildren() should throw org.apache.commons.vfs2.FileNotFoundException instead of java.io.FileNotFoundException #638.</action> 
+      <action type="fix" dev="ggregory" due-to="Gary Gregory">Remove -nouses directive from maven-bundle-plugin. OSGi package imports now state 'uses' definitions for package imports, this doesn't affect JPMS (from org.apache.commons:commons-parent:80).</action>
+      <action type="fix" dev="ggregory" due-to="Gary Gregory">Tests should depend on the Apache Log4j BOM POM instead of individual components in the parent POM.</action>
       <!-- ADD -->
       <action type="add" issue="VFS-848" dev="ggregory" due-to="beise, Gary Gregory">
         Config option for trailing slash in webdav URI #425.
@@ -264,9 +266,10 @@ The <action> type attribute can be add,update,fix,remove.
       <action type="add" dev="ggregory" due-to="Gary Gregory">
         Add FileSystemConfigBuilder.getParamOrDefault(FileSystemOptions, String, T).
       </action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add FileSystemManager.toFileObject(Path).</action>
       <!-- UPDATE -->
       <action dev="ggregory" due-to="Dependabot, Gary Gregory" type="update">
-        Bump org.apache.commons:commons-parent from 52 to 79 #497, #588, #592, #600, #608, #615, #623.
+        Bump org.apache.commons:commons-parent from 52 to 81 #497, #588, #592, #600, #608, #615, #623.
       </action>
       <action type="update" dev="ggregory" due-to="Dependabot, Gary Gregory">
         Bump actions/cache and others.
@@ -302,7 +305,7 @@ The <action> type attribute can be add,update,fix,remove.
         Bump org.apache.httpcomponents.client5:httpclient5 from 5.1 to 5.4.1 #561, #602, #2778.
       </action>
       <action type="update" dev="ggregory" due-to="Dependabot, Gary Gregory">
-        Bump org.apache.httpcomponents.core5:httpcore5 from 5.1.5 to 5.3.2 #369, #399, #429, #447, #559, #597, #624, #650.
+        Bump org.apache.httpcomponents.core5:httpcore5 from 5.1.5 to 5.3.3 #369, #399, #429, #447, #559, #597, #624, #650, #657.
       </action>
       <action type="update" dev="ggregory" due-to="Gary Gregory, Dependabot">
         Bump org.apache.mina:mina-core from 2.1.4 to 2.1.10 #646.
@@ -371,7 +374,7 @@ The <action> type attribute can be add,update,fix,remove.
         Bump commons-io:commons-io from 2.11.0 to 2.18.0 #515, #601, #633.
       </action>
       <action type="update" dev="ggregory" due-to="Gary Gregory, Dependabot">
-        Bump commons-codec:commons-codec from 1.15 to 1.17.2 #480, #530, #567.
+        Bump commons-codec:commons-codec from 1.15 to 1.18.0 #480, #530, #567, #654.
       </action>
       <action type="update" dev="ggregory" due-to="Gary Gregory">
         Bump org.apache.commons:commons-lang3 from 3.12.0 to 3.17.0 #568, #577, #594.
